@@ -1,29 +1,27 @@
-*** Settings ***
-Library  SeleniumLibrary   
+*** Settings ***  
 Documentation  Basic Search Functionality
+Resource  ../../Resources/CommonFunctions.robot
+Resource  ../../Resources/PageObjects/ToolPage.robot
+
+Test Setup  CommonFunctions.Start Test
+Test Teardown  CommonFunctions.End Test
 
 *** Variables ***
 
 
 *** Test Cases ***
-Verify basic search functionality for eBay
-    [Documentation]  This testcase verifies the basic search
+Toolbar Controle NMA
+    [Documentation]  Deze testcase checkt de werking van alle knoppen in de Toolbar
     [Tags]  Functional
-    
-    Start Test
-    Verify Search Results
-    End Test
 
-*** Keywords ***
+    ToolPage.Click Tools
+    ToolPage.Click Bestand
+    ToolPage.Click Navigeren
 
-Start Test  
-    Open Browser  https://www.ebay.com  chrome
-    Maximize Browser Window
 
-Verify Search Results
-    Input Text  //*[@id="gh-ac"]  mobile
-    Click Button  //*[@id='gh-btn']
-    Page Should Contain  results for mobile
 
-End Test
-    Close Browser
+
+
+
+
+
